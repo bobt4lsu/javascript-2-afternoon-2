@@ -91,7 +91,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
 function evenFinder(nums) {
   let evens = [];
-  for (i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (nums[i] % 2 === 0) {
       evens.push(nums[i])
     }
@@ -198,33 +198,26 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-function removeItem(arr, item) {
-  if (arr.length && item) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === item) {
-      arr.splice(i, 1)
-      return arr
-    } else {
-      return arr
+function removeItem(groceryList, item) {
+    if (groceryList && item) {
+
+      for (let i = 0; i < groceryList.length; i++) {
+        if (groceryList[i] === item) {
+          groceryList.splice([i], 1);
+        }
+      }
+      return groceryList
     }
-  }
-}
-  else {
-    return []
-  }
-}
+    else {
+      return []
+    }
+  }  
+
 
 removeItem(myGroceryList, 'MtnDew')
 
-function addItem(arr, item) {
-  if (arr.length && item) {
-    let updatedArr = arr.push(item)
-    return updatedArr
-   }
-   else 
-  return []
-}
-addItem(myGroceryList, 'ice cream')
+
+
 
 
 ////////// PROBLEM 9 //////////
@@ -234,7 +227,11 @@ addItem(myGroceryList, 'ice cream')
 */
 
 function maker () {
-  
+  let myArray = [];
+  for (i = 0; i < 215; i++) {
+    myArray[i] = i + 1;
+  }
+  return myArray
 }
 
 
@@ -251,7 +248,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen(numbers){
+    newNumbers = [];
+    for (i = 0;i < numbers.length ;i++){
+      newNumbers.push(Number(numbers[i])+10);
+    }
+    return newNumbers;
+  }
+  addTen(numbers)
 
 
 
@@ -276,8 +280,13 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-//Code Here
-
+function longer (arr1,arr2){
+  if (arr1.length > arr2.length) {    
+    return arr1
+  } else {
+    return arr2
+  }
+}
 
 
 /*
@@ -288,7 +297,15 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both(arr1,arr2) {
+  var arr3 = arr1.concat(arr2);
+  arr3.filter(function(elem, pos) {
+return arr3.indexOf(elem) == pos;
+});
+  return arr3;
+}
+
+both(arr1,arr2)
 
 
 
